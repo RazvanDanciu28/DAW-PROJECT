@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AngularApp1.Server.DataContext;
 using AngularApp1.Server.Models;
 using AngularApp1.Server.Services.UnitOfWorkService;
+using AngularApp1.Server.Services.ProductService;
 //++ services
 
 
@@ -38,6 +39,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.User.Requ
 
 ///TO ADD SERVICES
 builder.Services.AddTransient<IUnitOfWorkService, UnitOfWorkService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 
 builder.Services.AddTransient<SeedData>();
