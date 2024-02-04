@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using AngularApp1.Server.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 
 
