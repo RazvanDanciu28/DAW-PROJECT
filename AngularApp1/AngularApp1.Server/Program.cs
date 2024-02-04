@@ -4,7 +4,8 @@ using AngularApp1.Server.DataContext;
 using AngularApp1.Server.Models;
 using AngularApp1.Server.Services.UnitOfWorkService;
 using AngularApp1.Server.Services.ProductService;
-//++ services
+using AngularApp1.Server.Services.OrderItemService;
+using AngularApp1.Server.Services.OrderService;
 
 
 
@@ -31,15 +32,16 @@ builder.Services.AddSwaggerGen();
 
 var appConnectionString = builder.Configuration.GetConnectionString("dBConnection") ?? throw new InvalidOperationException("Connection string not found");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer("dbConnection"));
+    options.UseSqlServer("dBConnection"));
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.User.RequireUniqueEmail = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 
-///TO ADD SERVICES
 builder.Services.AddTransient<IUnitOfWorkService, UnitOfWorkService>();
 builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IOrderItemService, OrderItemService>();
 
 
 builder.Services.AddTransient<SeedData>();
