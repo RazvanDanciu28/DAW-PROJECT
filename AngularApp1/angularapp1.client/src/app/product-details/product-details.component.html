@@ -1,0 +1,8 @@
+<div *ngIf="product">
+    <div>
+        <h2>{{ product.productName }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">${{ product.price.toFixed(2) }}</p>
+        <p>Size: {{ product.size }}</p>
+    </div>
+</div>

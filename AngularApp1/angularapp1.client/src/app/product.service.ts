@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import Constants from './types';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './types';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,9 @@ export class ProductService {
     });
 
     return request;
+  }
+
+  getProductById(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.apiUrl}/Product/${id}`);
   }
 }
