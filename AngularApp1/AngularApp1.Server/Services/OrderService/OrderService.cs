@@ -48,7 +48,6 @@ namespace AngularApp1.Server.Services.OrderService
         {
             var order = await _context.Orders.SingleOrDefaultAsync(x => x.OrderId == orderId);
             order.Address = orderInfo.Address;
-            order.PaymentMethod = orderInfo.PaymentMethod;
             order.Date = DateTime.Now;
             order.Status = true;
             await _context.SaveChangesAsync();

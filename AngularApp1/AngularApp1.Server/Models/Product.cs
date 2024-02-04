@@ -11,8 +11,6 @@ namespace AngularApp1.Server.Models
         [Required]
         public string ProductName { get; set; }
 
-        [Required]
-        public string ProductType { get; set; }
 
         [Required]
         public string Gender { get; set; }
@@ -28,7 +26,5 @@ namespace AngularApp1.Server.Models
         [Required]
         public string Size { get; set; }
 
-        [Required]
-        public string PhotoUrl { get; set; }
     }
 }

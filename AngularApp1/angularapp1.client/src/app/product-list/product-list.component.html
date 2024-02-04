@@ -1,0 +1,10 @@
+<div>
+    <div *ngFor="let product of products">
+        <div>
+            <h4>{{product.productName}}</h4>
+            <p>{{product.description}}</p>
+            <p>${{ product.price.toFixed(2) }}</p>
+            <br><br><br>
+        </div>
+    </div>
+</div>
