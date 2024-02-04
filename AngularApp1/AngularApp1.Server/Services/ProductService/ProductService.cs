@@ -30,14 +30,6 @@ namespace AngularApp1.Server.Services.ProductService
         public async Task<Product> GetProductByIdAsync(Guid Id)
         {
             var product = await db.Products.SingleOrDefaultAsync(x => x.ProductId == Id);
-            if (product != null)
-            {
-
-                if (product.Size != "S" && product.Size != "M" && product.Size != "L")
-                {
-                    //de adaugat exceptie
-                }
-            }
             return product;
         }
 

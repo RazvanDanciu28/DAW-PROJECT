@@ -12,7 +12,7 @@ namespace AngularApp1.Server.Models
         public required string Email { get; set; }
         public required string Password { get; set; }
     }
-    public class AccountUserDTO
+    public class AccountUserDTO : LoginUserDTO
     {
         [Required(ErrorMessage = "Please insert your First Name"), MaxLength(100)]
         public required string FirstName { get; set; }
