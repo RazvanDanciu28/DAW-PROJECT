@@ -32,7 +32,7 @@ builder.Services.AddSwaggerGen();
 
 var appConnectionString = builder.Configuration.GetConnectionString("dBConnection") ?? throw new InvalidOperationException("Connection string not found");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer("dBConnection"));
+    options.UseSqlServer(appConnectionString));
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.User.RequireUniqueEmail = true)
     .AddRoles<IdentityRole>()
