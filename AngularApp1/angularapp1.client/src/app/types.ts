@@ -11,3 +11,16 @@ export interface Product {
     price: number;
     size: string;
   }
+
+  export interface UserDetails {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string;
+    password: string;
+  }
+
+  export interface User {
+    email: string;
+    password: string;
+  }

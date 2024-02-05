@@ -14,6 +14,7 @@ namespace AngularApp1.Server.Models
         [Required(ErrorMessage = "Please insert your Last Name"), MaxLength(100)]
         public string LastName { get; set; }
 
+
         public AppUser(ApplicationUserDTO audto) 
         {
             FirstName = audto.FirstName;
